@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="toroid_world">
+
+    <!-- Add sun (lighting) -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Custom ground plane -->
+    <model name="arena_ground">
+      <static>true</static>
+      <link name="ground_link">
+        <visual name="ground_visual">
+          <geometry>
+            <box>
+              <size>1.219 1.828 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <pose>0 0 -0.025 0 0 0</pose>
+        </visual>
+        <collision name="ground_collision">
+          <geometry>
+            <box>
+              <size>1.219 1.828 0.01</size>
+            </box>
+          </geometry>
+          <pose>0 0 -0.025 0 0 0</pose>
+        </collision>
+      </link>
+    </model>
+
+    <!-- Toroid 1 -->
+    <include>
+      <name>toroid_1</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>-0.43 0 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 2 -->
+    <include>
+      <name>toroid_2</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>-0.43 0.7 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 3 -->
+    <include>
+      <name>toroid_3</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>-0.43 -0.7 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 4 -->
+    <include>
+      <name>toroid_4</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>0 0.35 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 5 -->
+    <include>
+      <name>toroid_5</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>0 -0.35 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 6 -->
+    <include>
+      <name>toroid_6</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>0.43 0.7 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 7 -->
+    <include>
+      <name>toroid_7</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>0.43 0 0.01 0 0 0</pose>
+    </include>
+
+    <!-- Toroid 8 -->
+    <include>
+      <name>toroid_8</name>
+      <uri>file:///home/ridhima/workspaces/surge/src/arena/models/toroid</uri>
+      <pose>0.43 -0.7 0.01 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
+

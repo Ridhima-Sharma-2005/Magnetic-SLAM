@@ -1,0 +1,29 @@
+<launch>
+  <!-- Set model -->
+  <arg name="tb3_model" default="burger"/>
+  <env name="TURTLEBOT3_MODEL" value="$(arg tb3_model)"/>
+
+  <!-- Start Gazebo with your custom world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find arena)/worlds/my_arena.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+  </include>
+
+  <!-- Publish the robot_description param -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find turtlebot3_description)/urdf/turtlebot3_$(arg tb3_model).urdf.xacro'"/>
+
+  <!-- Spawn robot in Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-urdf -model turtlebot3 -param robot_description -x 0 -y 0 -z 0.1"/>
+  
+  <!-- Launch RViz -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch"/>
+  <node name="magnetometer_simulator"
+      pkg="mag_field_sim"
+      type="mag_field_publisher.py"
+      output="screen" />
+
+</launch>
+
