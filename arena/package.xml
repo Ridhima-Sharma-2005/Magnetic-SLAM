@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>arena</name>
+  <version>0.1.0</version>
+  <description>arena</description>
+  <maintainer email="ridhima@gmail.com">ridhima</maintainer>
+  <license>Apache License</license>
+  <author >ridhima</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>gazebo</build_depend>
+  <build_depend>gazebo_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <run_depend>message_runtime</run_depend> 
+  <run_depend>roscpp</run_depend>
+  <run_depend>gazebo</run_depend>
+  <run_depend>gazebo_msgs</run_depend>
+
+</package>
+
